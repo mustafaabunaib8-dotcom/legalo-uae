@@ -11,7 +11,10 @@
  */
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const messages: Record<string, any> = {
+export type Dict = Record<string, any>;
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const messages: Record<string, any> = {
   en: {
     common: {
       brand: 'Legalo',

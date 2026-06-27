@@ -1,16 +1,18 @@
 import type { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
   reactStrictMode: true,
 
   // Disable ESLint during build
   eslint: { ignoreDuringBuilds: true },
 
-  // Disable TypeScript type-checking during build (runtime works; lib-level conflicts only)
+  // Disable TypeScript type-checking during build
   typescript: { ignoreBuildErrors: true },
 
-  // Image: allow any remote (Supabase Storage avatars, firm logos)
+  // Image: allow any remote
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: '**' },
@@ -18,4 +20,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
