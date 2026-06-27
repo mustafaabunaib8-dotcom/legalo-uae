@@ -45,12 +45,12 @@ export default async function HomePage({
 
           {/* CTAs */}
           <div className="mb-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/find-lawyer">
+            <Link href="/en/find-a-lawyer">
               <Button variant="primary" size="lg" className="w-full sm:w-auto">
                 {t('ctaPrimary')}
               </Button>
             </Link>
-            <Link href="/providers">
+            <Link href="/en/for-providers">
               <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                 {t('ctaSecondary')}
               </Button>
