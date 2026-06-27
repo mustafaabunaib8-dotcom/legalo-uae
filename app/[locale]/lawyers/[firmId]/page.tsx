@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -12,8 +13,9 @@ import { getFirm, getFirmReviews } from '@/lib/services/firms';
 import { CheckCircle, Clock, Award, MapPin, MessageSquare, Star } from 'lucide-react';
 import type { LawFirm, LawyerReview } from '@/types';
 
-export default async function FirmProfilePage({ params }: { params: Promise<{ firmId: string; locale: string }> }) {
-  const { firmId } = await params;
+export default function FirmProfilePage() {
+  const params = useParams();
+  const firmId = params.firmId as string;
   const t = useTranslations();
   const [firm, setFirm] = useState<LawFirm | null>(null);
   const [reviews, setReviews] = useState<LawyerReview[]>([]);

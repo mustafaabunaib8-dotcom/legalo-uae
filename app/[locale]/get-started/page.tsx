@@ -51,7 +51,7 @@ const EMIRATES = ['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras Al Khaimah', 'F
 const LANGUAGES = ['English', 'Arabic', 'Hindi', 'Urdu', 'French', 'Russian', 'Chinese']
 
 export default function GetStartedPage() {
-  const t = useTranslations()
+  const t = useTranslations('intake');
   const locale = useLocale()
   const router = useRouter()
 
@@ -122,7 +122,7 @@ export default function GetStartedPage() {
                 }`}
               >
                 <Brain className="h-4 w-4" />
-                {t('intake.mode.ai')}
+                {t('mode.ai')}
               </button>
               <button
                 onClick={() => setMode('manual')}
@@ -131,7 +131,7 @@ export default function GetStartedPage() {
                 }`}
               >
                 <PenLine className="h-4 w-4" />
-                {t('intake.mode.manual')}
+                {t('mode.manual')}
               </button>
             </div>
           </div>
@@ -146,17 +146,17 @@ export default function GetStartedPage() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-50 mb-5">
                 <Sparkles className="h-8 w-8 text-emerald-600" />
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{t('intake.ai.title')}</h1>
-              <p className="text-lg text-gray-500">{t('intake.ai.subtitle')}</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{t('ai.title')}</h1>
+              <p className="text-lg text-gray-500">{t('ai.subtitle')}</p>
             </div>
 
             <Card className="border border-gray-100 rounded-2xl">
               <CardContent className="p-6">
                 <Label className="text-sm font-medium text-gray-700 mb-2 block">
-                  {t('intake.ai.label')}
+                  {t('ai.label')}
                 </Label>
                 <Textarea
-                  placeholder={t('intake.ai.placeholder')}
+                  placeholder={t('ai.placeholder')}
                   value={aiText}
                   onChange={(e) => setAiText(e.target.value)}
                   className="min-h-[200px] resize-none rounded-xl border-gray-200 focus:border-emerald-300 focus:ring-emerald-100 text-base leading-relaxed"
@@ -171,11 +171,11 @@ export default function GetStartedPage() {
                     {analyzing ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        {t('intake.ai.analyzing')}
+                        {t('ai.analyzing')}
                       </>
                     ) : (
                       <>
-                        {t('intake.ai.analyze')}
+                        {t('ai.analyze')}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </>
                     )}
@@ -191,8 +191,8 @@ export default function GetStartedPage() {
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-emerald-50 mb-6 animate-pulse">
               <Sparkles className="h-10 w-10 text-emerald-600" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('intake.ai.processing')}</h2>
-            <p className="text-gray-500">{t('intake.ai.processingDesc')}</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('ai.processing')}</h2>
+            <p className="text-gray-500">{t('ai.processingDesc')}</p>
             <div className="mt-8 max-w-md mx-auto space-y-3">
               {[0, 1, 2].map((i) => (
                 <div key={i} className="h-4 bg-gray-100 rounded-lg animate-pulse" style={{ width: `${80 - i * 15}%` }} />
@@ -207,8 +207,8 @@ export default function GetStartedPage() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-50 mb-5">
                 <CheckCircle2 className="h-8 w-8 text-emerald-600" />
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{t('intake.ai.complete.title')}</h1>
-              <p className="text-lg text-gray-500">{t('intake.ai.complete.subtitle')}</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{t('ai.complete.title')}</h1>
+              <p className="text-lg text-gray-500">{t('ai.complete.subtitle')}</p>
             </div>
 
             <Card className="border border-gray-100 rounded-2xl mb-6">
@@ -230,7 +230,7 @@ export default function GetStartedPage() {
                         : 'bg-blue-50 text-blue-700 border-blue-200'
                     }`}
                   >
-                    {analysis.complexity} {t('intake.ai.complexity')}
+                    {analysis.complexity} {t('ai.complexity')}
                   </Badge>
                 </div>
 
@@ -239,7 +239,7 @@ export default function GetStartedPage() {
                 {/* Requirements */}
                 <div className="mb-8">
                   <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3">
-                    {t('intake.ai.requirements')}
+                    {t('ai.requirements')}
                   </h3>
                   <div className="space-y-2">
                     {analysis.requirements.map((req) => (
@@ -254,7 +254,7 @@ export default function GetStartedPage() {
                 {/* Steps */}
                 <div className="mb-8">
                   <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3">
-                    {t('intake.ai.steps')}
+                    {t('ai.steps')}
                   </h3>
                   <div className="space-y-3">
                     {analysis.steps.map((s, i) => (
@@ -272,13 +272,13 @@ export default function GetStartedPage() {
                 <div className="grid grid-cols-2 gap-4 padding-4 bg-gray-50 rounded-xl p-5">
                   <div>
                     <div className="flex items-center gap-2 text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">
-                      <Clock className="h-3.5 w-3.5" /> {t('intake.ai.timeline')}
+                      <Clock className="h-3.5 w-3.5" /> {t('ai.timeline')}
                     </div>
                     <div className="text-base font-semibold text-gray-900">{analysis.timeline}</div>
                   </div>
                   <div>
                     <div className="flex items-center gap-2 text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">
-                      <Wallet className="h-3.5 w-3.5" /> {t('intake.ai.cost')}
+                      <Wallet className="h-3.5 w-3.5" /> {t('ai.cost')}
                     </div>
                     <div className="text-base font-semibold text-gray-900">{analysis.estimatedCost}</div>
                   </div>
@@ -294,7 +294,7 @@ export default function GetStartedPage() {
                 </div>
                 <div>
                   <div className="text-xs font-medium text-emerald-600 uppercase tracking-wide">
-                    {t('intake.ai.recommended')}
+                    {t('ai.recommended')}
                   </div>
                   <div className="text-base font-semibold text-gray-900">{analysis.recommendedAction}</div>
                 </div>
@@ -311,13 +311,13 @@ export default function GetStartedPage() {
                   setAiText('')
                 }}
               >
-                {t('intake.ai.actions.another')}
+                {t('ai.actions.another')}
               </Button>
               <Button
                 className="flex-1 h-12 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white"
                 onClick={handleSubmit}
               >
-                {t('intake.ai.actions.submit')}
+                {t('ai.actions.submit')}
                 <Send className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -331,16 +331,16 @@ export default function GetStartedPage() {
             <div className="mb-10">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-sm font-medium text-gray-500">
-                  {t('intake.manual.step')} {step} / 4
+                  {t('manual.step')} {step} / 4
                 </span>
                 <span className="text-sm text-gray-400">
                   {step === 1
-                    ? t('intake.manual.step1.title')
+                    ? t('manual.step1.title')
                     : step === 2
-                    ? t('intake.manual.step2.title')
+                    ? t('manual.step2.title')
                     : step === 3
-                    ? t('intake.manual.step3.title')
-                    : t('intake.manual.step4.title')}
+                    ? t('manual.step3.title')
+                    : t('manual.step4.title')}
                 </span>
               </div>
               <Progress value={step * 25} className="h-1.5" />
@@ -351,8 +351,8 @@ export default function GetStartedPage() {
                 {/* Step 1: Category */}
                 {step === 1 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('intake.manual.step1.title')}</h2>
-                    <p className="text-gray-500 mb-8">{t('intake.manual.step1.desc')}</p>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('manual.step1.title')}</h2>
+                    <p className="text-gray-500 mb-8">{t('manual.step1.desc')}</p>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                       {SERVICES.map((svc) => (
                         <button
@@ -370,7 +370,7 @@ export default function GetStartedPage() {
                           <span className="text-sm font-medium text-gray-900">
                             {t(`services.${svc.id}`)}
                           </span>
-                          <span className="text-xs text-gray-400">{svc.count} {t('intake.manual.firms')}</span>
+                          <span className="text-xs text-gray-400">{svc.count} {t('manual.firms')}</span>
                         </button>
                       ))}
                     </div>
@@ -380,12 +380,12 @@ export default function GetStartedPage() {
                 {/* Step 2: Emirate + Languages */}
                 {step === 2 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('intake.manual.step2.title')}</h2>
-                    <p className="text-gray-500 mb-8">{t('intake.manual.step2.desc')}</p>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('manual.step2.title')}</h2>
+                    <p className="text-gray-500 mb-8">{t('manual.step2.desc')}</p>
 
                     <div className="space-y-6">
                       <div>
-                        <Label className="text-sm font-medium text-gray-700 mb-3 block">{t('intake.manual.step2.emirate')}</Label>
+                        <Label className="text-sm font-medium text-gray-700 mb-3 block">{t('manual.step2.emirate')}</Label>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                           {EMIRATES.map((e) => (
                             <button
@@ -404,7 +404,7 @@ export default function GetStartedPage() {
                       </div>
 
                       <div>
-                        <Label className="text-sm font-medium text-gray-700 mb-3 block">{t('intake.manual.step2.languages')}</Label>
+                        <Label className="text-sm font-medium text-gray-700 mb-3 block">{t('manual.step2.languages')}</Label>
                         <div className="flex flex-wrap gap-2">
                           {LANGUAGES.map((lang) => (
                             <button
@@ -435,16 +435,16 @@ export default function GetStartedPage() {
                 {/* Step 3: Description + Docs */}
                 {step === 3 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('intake.manual.step3.title')}</h2>
-                    <p className="text-gray-500 mb-8">{t('intake.manual.step3.desc')}</p>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('manual.step3.title')}</h2>
+                    <p className="text-gray-500 mb-8">{t('manual.step3.desc')}</p>
 
                     <div className="space-y-6">
                       <div>
                         <Label className="text-sm font-medium text-gray-700 mb-2 block">
-                          {t('intake.manual.step3.description')}
+                          {t('manual.step3.description')}
                         </Label>
                         <Textarea
-                          placeholder={t('intake.manual.step3.placeholder')}
+                          placeholder={t('manual.step3.placeholder')}
                           value={wizard.description}
                           onChange={(e) => setWizard({ ...wizard, description: e.target.value })}
                           className="min-h-[160px] resize-none rounded-xl border-gray-200 focus:border-emerald-300"
@@ -453,12 +453,12 @@ export default function GetStartedPage() {
 
                       <div>
                         <Label className="text-sm font-medium text-gray-700 mb-2 block">
-                          {t('intake.manual.step3.documents')}
+                          {t('manual.step3.documents')}
                         </Label>
                         <div className="border-2 border-dashed border-gray-200 rounded-xl p-8 text-center hover:border-emerald-300 transition-colors cursor-pointer">
                           <FileText className="h-8 w-8 text-gray-300 mx-auto mb-3" />
-                          <p className="text-sm text-gray-500">{t('intake.manual.step3.upload')}</p>
-                          <p className="text-xs text-gray-400 mt-1">{t('intake.manual.step3.uploadHint')}</p>
+                          <p className="text-sm text-gray-500">{t('manual.step3.upload')}</p>
+                          <p className="text-xs text-gray-400 mt-1">{t('manual.step3.uploadHint')}</p>
                         </div>
                       </div>
                     </div>
@@ -468,14 +468,14 @@ export default function GetStartedPage() {
                 {/* Step 4: Payment */}
                 {step === 4 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('intake.manual.step4.title')}</h2>
-                    <p className="text-gray-500 mb-8">{t('intake.manual.step4.desc')}</p>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('manual.step4.title')}</h2>
+                    <p className="text-gray-500 mb-8">{t('manual.step4.desc')}</p>
 
                     <div className="space-y-4">
                       {[
-                        { id: 'escrow', label: t('intake.manual.step4.escrow'), desc: t('intake.manual.step4.escrowDesc') },
-                        { id: 'direct', label: t('intake.manual.step4.direct'), desc: t('intake.manual.step4.directDesc') },
-                        { id: 'subscription', label: t('intake.manual.step4.subscription'), desc: t('intake.manual.step4.subscriptionDesc') },
+                        { id: 'escrow', label: t('manual.step4.escrow'), desc: t('manual.step4.escrowDesc') },
+                        { id: 'direct', label: t('manual.step4.direct'), desc: t('manual.step4.directDesc') },
+                        { id: 'subscription', label: t('manual.step4.subscription'), desc: t('manual.step4.subscriptionDesc') },
                       ].map((opt) => (
                         <button
                           key={opt.id}
@@ -496,7 +496,7 @@ export default function GetStartedPage() {
                       <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-xl flex items-start gap-3">
                         <Shield className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
                         <div className="text-sm text-amber-800">
-                          {t('intake.manual.step4.escrowNotice')}
+                          {t('manual.step4.escrowNotice')}
                         </div>
                       </div>
                     )}
@@ -508,7 +508,7 @@ export default function GetStartedPage() {
                   {step > 1 ? (
                     <Button variant="ghost" onClick={handleWizardBack} className="text-gray-500">
                       <ArrowLeft className="mr-2 h-4 w-4" />
-                      {t('intake.manual.back')}
+                      {t('manual.back')}
                     </Button>
                   ) : (
                     <div />
@@ -521,7 +521,7 @@ export default function GetStartedPage() {
                       (step === 2 && !wizard.emirate)
                     }
                   >
-                    {step === 4 ? t('intake.manual.submit') : t('intake.manual.next')}
+                    {step === 4 ? t('manual.submit') : t('manual.next')}
                     {step < 4 && <ArrowRight className="ml-2 h-4 w-4" />}
                   </Button>
                 </div>

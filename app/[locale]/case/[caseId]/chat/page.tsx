@@ -36,15 +36,15 @@ interface Firm {
   status: 'online' | 'reviewing' | 'offline'
 }
 
-export default function MatchChatPage() {
-  const t = useTranslations('chat')
+export default function ChatPage() {
+  const t = useTranslations('chat');
   const locale = useLocale()
   const { caseId } = useParams()
 
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: t('chat.welcome'),
+      content: t('welcome'),
       sender: 'system',
       timestamp: new Date(Date.now() - 300000),
     },
@@ -163,8 +163,8 @@ export default function MatchChatPage() {
       {/* Left Sidebar - Match Sidebar */}
       <aside className="hidden lg:flex w-80 flex-col border-r border-gray-100 bg-white">
         <div className="p-6 border-b border-gray-100">
-          <h2 className="text-lg font-semibold text-gray-900">{t('chat.matches.title')}</h2>
-          <p className="text-sm text-gray-500 mt-1">{t('chat.matches.subtitle')}</p>
+          <h2 className="text-lg font-semibold text-gray-900">{t('matches.title')}</h2>
+          <p className="text-sm text-gray-500 mt-1">{t('matches.subtitle')}</p>
         </div>
         <ScrollArea className="flex-1">
           <div className="p-4 space-y-2">
@@ -254,9 +254,9 @@ export default function MatchChatPage() {
               </div>
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                <span>{t('chat.header.online')}</span>
+                <span>{t('header.online')}</span>
                 <span className="text-gray-300">•</span>
-                <span>{t('chat.header.responseTime', { time: selectedFirm.responseTime })}</span>
+                <span>{t('header.responseTime', { time: selectedFirm.responseTime })}</span>
               </div>
             </div>
           </div>
@@ -273,7 +273,7 @@ export default function MatchChatPage() {
         {/* Escrow Banner */}
         <div className="px-6 py-2.5 bg-amber-50 border-b border-amber-100 flex items-center gap-2">
           <AlertTriangle className="h-4 w-4 text-amber-600 flex-shrink-0" />
-          <span className="text-sm text-amber-800">{t('chat.escrow.banner')}</span>
+          <span className="text-sm text-amber-800">{t('escrow.banner')}</span>
         </div>
 
         {/* Messages */}
@@ -361,7 +361,7 @@ export default function MatchChatPage() {
         {/* Quick replies */}
         <div className="px-6 pb-2">
           <div className="flex gap-2 overflow-x-auto">
-            {[t('chat.quick.yes'), t('chat.quick.call'), t('chat.quick.reviews')].map((reply) => (
+            {[t('quick.yes'), t('quick.call'), t('quick.reviews')].map((reply) => (
               <button
                 key={reply}
                 onClick={() => setInputValue(reply)}
@@ -392,7 +392,7 @@ export default function MatchChatPage() {
                   e.target.style.height = Math.min(e.target.scrollHeight, 120) + 'px'
                 }}
                 onKeyDown={handleKeyDown}
-                placeholder={t('chat.input.placeholder')}
+                placeholder={t('input.placeholder')}
                 className="w-full resize-none rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-100 focus:border-emerald-300 max-h-[120px]"
                 rows={1}
               />
@@ -413,7 +413,7 @@ export default function MatchChatPage() {
       <aside className="hidden xl:flex w-80 flex-col border-l border-gray-100 bg-white">
         <div className="p-6">
           <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
-            {t('chat.info.title')}
+            {t('info.title')}
           </h3>
           <div className="text-center mb-6">
             <Avatar className="h-20 w-20 mx-auto mb-3">
@@ -425,11 +425,11 @@ export default function MatchChatPage() {
             <div className="flex items-center justify-center gap-1 mt-1">
               <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
               <span className="text-sm font-semibold text-gray-900">{selectedFirm.rating}</span>
-              <span className="text-sm text-gray-400">(324 {t('chat.info.reviews')})</span>
+              <span className="text-sm text-gray-400">(324 {t('info.reviews')})</span>
             </div>
             <Badge className="mt-2 bg-emerald-50 text-emerald-700 border-emerald-200">
               <Shield className="h-3 w-3 mr-1" />
-              {t('chat.info.verified')}
+              {t('info.verified')}
             </Badge>
           </div>
 
@@ -441,7 +441,7 @@ export default function MatchChatPage() {
                 <Globe className="h-4 w-4 text-gray-500" />
               </div>
               <div>
-                <div className="text-xs text-gray-500">{t('chat.info.location')}</div>
+                <div className="text-xs text-gray-500">{t('info.location')}</div>
                 <div className="text-sm font-medium text-gray-900">{selectedFirm.location}</div>
               </div>
             </div>
@@ -450,7 +450,7 @@ export default function MatchChatPage() {
                 <Clock className="h-4 w-4 text-gray-500" />
               </div>
               <div>
-                <div className="text-xs text-gray-500">{t('chat.info.responseTime')}</div>
+                <div className="text-xs text-gray-500">{t('info.responseTime')}</div>
                 <div className="text-sm font-medium text-gray-900">{selectedFirm.responseTime}</div>
               </div>
             </div>
@@ -459,7 +459,7 @@ export default function MatchChatPage() {
                 <Mail className="h-4 w-4 text-gray-500" />
               </div>
               <div>
-                <div className="text-xs text-gray-500">{t('chat.info.email')}</div>
+                <div className="text-xs text-gray-500">{t('info.email')}</div>
                 <div className="text-sm font-medium text-gray-900">contact@altamimi.ae</div>
               </div>
             </div>
@@ -469,7 +469,7 @@ export default function MatchChatPage() {
 
           <div>
             <h5 className="text-xs font-semibold text-gray-900 uppercase tracking-wide mb-3">
-              {t('chat.info.specialties')}
+              {t('info.specialties')}
             </h5>
             <div className="flex flex-wrap gap-2">
               {['Corporate Law', 'M&A', 'DIFC', 'Real Estate'].map((spec) => (
@@ -483,7 +483,7 @@ export default function MatchChatPage() {
           <Separator className="my-6" />
 
           <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl h-11">
-            {t('chat.info.bookConsultation')}
+            {t('info.bookConsultation')}
             <ChevronRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

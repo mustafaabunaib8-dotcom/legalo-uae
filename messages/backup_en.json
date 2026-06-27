@@ -72,78 +72,54 @@
     "ctaTitle": "Ready to find your lawyer?",
     "ctaSubtitle": "Free AI analysis · No commitment · Results in minutes",
     "ctaButton": "Get started now",
-    "dashboard": {
-      "client": {
-        "subtitle": "Track your cases, messages, and upcoming deadlines in one place."
-      }
-    },
-    "intake": {
-      "mode": {
-        "ai": "AI Analysis",
-        "manual": "Manual"
-      },
-      "ai": {
-        "title": "Describe your legal situation",
-        "subtitle": "Our AI will analyze your case and provide instant guidance on the right path forward.",
-        "label": "Your situation",
-        "placeholder": "Describe your legal matter in your own words. Be as specific as possible — we'll use this to match you with the right specialist.",
-        "analyze": "Analyze my case",
-        "analyzing": "Analyzing…",
-        "processing": "AI is analyzing your case…",
-        "processingDesc": "This usually takes 10-15 seconds.",
-        "requirements": "What you'll need",
-        "steps": "Recommended steps",
-        "timeline": "Expected timeline",
-        "cost": "Estimated costs",
-        "complexity": "Complexity assessment",
-        "recommended": "Recommended path",
-        "actions": {
-          "submit": "Submit & find a lawyer",
-          "another": "Analyze another situation"
-        },
-        "complete": {
-          "title": "Analysis complete",
-          "subtitle": "Based on your description, here's what you need to know."
-        }
-      },
-      "manual": {
-        "step": "Step",
-        "back": "Back",
-        "next": "Next",
-        "submit": "Create case",
-        "firms": "firms matched",
-        "step1": {
-          "title": "What type of legal matter?",
-          "desc": "Select the category that best fits your situation."
-        },
-        "step2": {
-          "title": "Location & language",
-          "desc": "Where is your matter located, and what languages do you prefer?",
-          "emirate": "Emirate or jurisdiction",
-          "languages": "Preferred languages"
-        },
-        "step3": {
-          "title": "Describe your situation",
-          "desc": "Give us enough detail so we can match you with the right specialist.",
-          "description": "Description",
-          "placeholder": "Describe the key facts — what happened, when, and what outcome you're seeking.",
-          "documents": "Supporting documents (optional)",
-          "upload": "Upload documents",
-          "uploadHint": "PDF, DOCX, images up to 10 MB"
-        },
-        "step4": {
-          "title": "How would you like to pay?",
-          "desc": "Choose a payment method. All payments are protected by escrow.",
-          "escrow": "Escrow-protected",
-          "escrowDesc": "Your funds are held securely until you approve the work.",
-          "escrowNotice": "No payment required now — pay only after matching.",
-          "subscription": "Subscription",
-          "subscriptionDesc": "Monthly plan with included consultations.",
-          "direct": "Direct billing",
-          "directDesc": "Pay the firm directly, outside the platform."
-        }
-      }
-    }
+    "dashboard.client.subtitle": "Track your cases, messages, and upcoming deadlines in one place.",
+    "intake.mode.ai": "AI Analysis",
+    "intake.mode.manual": "Manual",
+    "intake.ai.title": "Describe your legal situation",
+    "intake.ai.subtitle": "Our AI will analyze your case and provide instant guidance on the right path forward.",
+    "intake.ai.label": "Your situation",
+    "intake.ai.placeholder": "Describe your legal matter in your own words. Be as specific as possible — we'll use this to match you with the right specialist.",
+    "intake.ai.analyze": "Analyze my case",
+    "intake.ai.analyzing": "Analyzing…",
+    "intake.ai.processing": "AI is analyzing your case…",
+    "intake.ai.processingDesc": "This usually takes 10-15 seconds.",
+    "intake.ai.requirements": "What you'll need",
+    "intake.ai.steps": "Recommended steps",
+    "intake.ai.timeline": "Expected timeline",
+    "intake.ai.cost": "Estimated costs",
+    "intake.ai.complexity": "Complexity assessment",
+    "intake.ai.recommended": "Recommended path",
+    "intake.ai.actions.submit": "Submit & find a lawyer",
+    "intake.ai.actions.another": "Analyze another situation",
+    "intake.ai.complete.title": "Analysis complete",
+    "intake.ai.complete.subtitle": "Based on your description, here's what you need to know.",
+    "intake.manual.step": "Step",
+    "intake.manual.back": "Back",
+    "intake.manual.next": "Next",
+    "intake.manual.submit": "Create case",
+    "intake.manual.firms": "firms matched",
+    "intake.manual.step1.title": "What type of legal matter?",
+    "intake.manual.step1.desc": "Select the category that best fits your situation.",
+    "intake.manual.step2.title": "Location & language",
+    "intake.manual.step2.desc": "Where is your matter located, and what languages do you prefer?",
+    "intake.manual.step2.emirate": "Emirate or jurisdiction",
+    "intake.manual.step2.languages": "Preferred languages",
+    "intake.manual.step3.title": "Describe your situation",
+    "intake.manual.step3.desc": "Give us enough detail so we can match you with the right specialist.",
+    "intake.manual.step3.description": "Description",
+    "intake.manual.step3.placeholder": "Describe the key facts — what happened, when, and what outcome you're seeking.",
+    "intake.manual.step3.documents": "Supporting documents (optional)",
+    "intake.manual.step3.upload": "Upload documents",
+    "intake.manual.step3.uploadHint": "PDF, DOCX, images up to 10 MB",
+    "intake.manual.step4.title": "How would you like to pay?",
+    "intake.manual.step4.desc": "Choose a payment method. All payments are protected by escrow.",
+    "intake.manual.step4.escrow": "Escrow-protected",
+    "intake.manual.step4.escrowDesc": "Your funds are held securely until you approve the work.",
+    "intake.manual.step4.escrowNotice": "No payment required now — pay only after matching.",
+    "intake.manual.step4.subscription": "Subscription",
+    "intake.manual.step4.subscriptionDesc": "Monthly plan with included consultations.",
+    "intake.manual.step4.direct": "Direct billing",
+    "intake.manual.step4.directDesc": "Pay the firm directly, outside the platform."
   },
   "nav": {
     "home": "Home",
@@ -181,25 +157,15 @@
     "copyright": "© 2025 Legalo Technologies FZ-LLC. All rights reserved."
   },
   "forms": {
-    "email": {
-      "label": "Email",
-      "placeholder": "you@example.com"
-    },
-    "password": {
-      "label": "Password",
-      "placeholder": "••••••••"
-    },
-    "name": {
-      "label": "Full name",
-      "placeholder": "Your full name"
-    },
-    "phone": {
-      "label": "Phone",
-      "placeholder": "+971..."
-    },
-    "search": {
-      "placeholder": "Search"
-    },
+    "email.label": "Email",
+    "email.placeholder": "you@example.com",
+    "password.label": "Password",
+    "password.placeholder": "••••••••",
+    "name.label": "Full name",
+    "name.placeholder": "Your full name",
+    "phone.label": "Phone",
+    "phone.placeholder": "+971...",
+    "search.placeholder": "Search",
     "required": "Required",
     "emailRequired": "Email is required",
     "passwordMin": "Password must be at least 8 characters",
@@ -216,19 +182,13 @@
     "serverError": "Server error — try again shortly"
   },
   "empty": {
-    "cases": {
-      "title": "No cases yet",
-      "body": "When you create a case, it will appear here.",
-      "cta": "Start a new case"
-    },
-    "messages": {
-      "title": "No messages yet",
-      "body": "Messages from your matched lawyer will appear here."
-    },
-    "documents": {
-      "title": "No documents",
-      "body": "Upload documents to share them with your lawyer."
-    }
+    "cases.title": "No cases yet",
+    "cases.body": "When you create a case, it will appear here.",
+    "cases.cta": "Start a new case",
+    "messages.title": "No messages yet",
+    "messages.body": "Messages from your matched lawyer will appear here.",
+    "documents.title": "No documents",
+    "documents.body": "Upload documents to share them with your lawyer."
   },
   "home": {
     "heroBadge": "Trusted by 2,400+ licensed lawyers across the UAE",
@@ -272,109 +232,77 @@
     "statsEscrow": "in Escrow"
   },
   "chat": {
-    "escrow": {
-      "banner": "Payments are protected by Legalo escrow"
-    },
-    "header": {
-      "online": "Online"
-    },
-    "input": {
-      "placeholder": "Type your message…"
-    },
-    "matches": {
-      "title": "Your matches",
-      "subtitle": "Licensed firms matched to your case"
-    },
-    "info": {
-      "title": "Firm details",
-      "verified": "Verified firm",
-      "specialties": "Specialties",
-      "responseTime": "Avg. response",
-      "reviews": "Reviews",
-      "location": "Office",
-      "email": "Email",
-      "bookConsultation": "Book consultation"
-    },
+    "escrow.banner": "Payments are protected by Legalo escrow",
+    "header.online": "Online",
+    "input.placeholder": "Type your message…",
+    "matches.title": "Your matches",
+    "matches.subtitle": "Licensed firms matched to your case",
+    "info.title": "Firm details",
+    "info.verified": "Verified firm",
+    "info.specialties": "Specialties",
+    "info.responseTime": "Avg. response",
+    "info.reviews": "Reviews",
+    "info.location": "Office",
+    "info.email": "Email",
+    "info.bookConsultation": "Book consultation",
     "welcome": "Welcome — this is the start of your case chat with matched firms.",
-    "quick": {
-      "yes": "Yes, I'd like to proceed",
-      "reviews": "Can I see reviews?",
-      "call": "Can we schedule a call?"
-    }
+    "quick.yes": "Yes, I'd like to proceed",
+    "quick.reviews": "Can I see reviews?",
+    "quick.call": "Can we schedule a call?"
   },
   "dashboard": {
-    "client": {
-      "title": "Your cases",
-      "subtitle": "Track your cases, messages, and upcoming deadlines in one place.",
-      "empty": "You have no active cases yet. Start one to see it here.",
-      "newCase": "New case"
-    }
+    "client.title": "Your cases",
+    "client.subtitle": "Track your cases, messages, and upcoming deadlines in one place.",
+    "client.empty": "You have no active cases yet. Start one to see it here.",
+    "client.newCase": "New case"
   },
   "intake": {
-    "mode": {
-      "ai": "AI analysis",
-      "manual": "Manual"
-    },
-    "ai": {
-      "title": "Describe your legal situation",
-      "subtitle": "Our AI will analyze your case and provide instant guidance on the right path forward.",
-      "label": "Your situation",
-      "placeholder": "Describe your legal matter in your own words…",
-      "analyze": "Analyze my case",
-      "analyzing": "Analyzing…",
-      "processing": "AI is analyzing your case…",
-      "processingDesc": "This usually takes 10–15 seconds.",
-      "complete": {
-        "title": "Analysis complete",
-        "subtitle": "Based on your description, here's what you need to know."
-      },
-      "requirements": "What you'll need",
-      "steps": "Recommended steps",
-      "timeline": "Expected timeline",
-      "cost": "Estimated costs",
-      "complexity": "Complexity",
-      "recommended": "Recommended path",
-      "actions": {
-        "submit": "Submit & find a lawyer",
-        "another": "Analyze another situation"
-      }
-    },
-    "manual": {
-      "step": "Step",
-      "back": "Back",
-      "next": "Next",
-      "submit": "Create case",
-      "step1": {
-        "title": "What type of legal matter?",
-        "desc": "Select the category that best fits your situation."
-      },
-      "step2": {
-        "title": "Location & language",
-        "desc": "Where is your matter, and what language do you prefer?",
-        "emirate": "Emirate or jurisdiction",
-        "languages": "Preferred languages"
-      },
-      "step3": {
-        "title": "Describe your situation",
-        "desc": "Give us enough detail so we can match you with the right specialist.",
-        "description": "Description",
-        "placeholder": "Describe the key facts — what happened, when, and what outcome you're seeking.",
-        "documents": "Supporting documents (optional)",
-        "upload": "Upload documents",
-        "uploadHint": "PDF, DOCX, images up to 10 MB"
-      },
-      "step4": {
-        "title": "How would you like to pay?",
-        "desc": "All payments are protected by escrow.",
-        "escrow": "Escrow-protected payment",
-        "escrowDesc": "Held securely until you approve the work.",
-        "escrowNotice": "No payment required now — pay only after matching.",
-        "subscription": "Monthly subscription",
-        "subscriptionDesc": "Included consultations each month.",
-        "direct": "Direct billing",
-        "directDesc": "Pay the firm directly, outside the platform."
-      }
-    }
+    "mode.ai": "AI analysis",
+    "mode.manual": "Manual",
+    "ai.title": "Describe your legal situation",
+    "ai.subtitle": "Our AI will analyze your case and provide instant guidance on the right path forward.",
+    "ai.label": "Your situation",
+    "ai.placeholder": "Describe your legal matter in your own words…",
+    "ai.analyze": "Analyze my case",
+    "ai.analyzing": "Analyzing…",
+    "ai.processing": "AI is analyzing your case…",
+    "ai.processingDesc": "This usually takes 10–15 seconds.",
+    "ai.complete.title": "Analysis complete",
+    "ai.complete.subtitle": "Based on your description, here's what you need to know.",
+    "ai.requirements": "What you'll need",
+    "ai.steps": "Recommended steps",
+    "ai.timeline": "Expected timeline",
+    "ai.cost": "Estimated costs",
+    "ai.complexity": "Complexity",
+    "ai.recommended": "Recommended path",
+    "ai.actions.submit": "Submit & find a lawyer",
+    "ai.actions.another": "Analyze another situation",
+    "manual.step": "Step",
+    "manual.back": "Back",
+    "manual.next": "Next",
+    "manual.submit": "Create case",
+    "manual.step1.title": "What type of legal matter?",
+    "manual.step1.desc": "Select the category that best fits your situation.",
+    "manual.step2.title": "Location & language",
+    "manual.step2.desc": "Where is your matter, and what language do you prefer?",
+    "manual.step2.emirate": "Emirate or jurisdiction",
+    "manual.step2.languages": "Preferred languages",
+    "manual.step3.title": "Describe your situation",
+    "manual.step3.desc": "Give us enough detail so we can match you with the right specialist.",
+    "manual.step3.description": "Description",
+    "manual.step3.placeholder": "Describe the key facts — what happened, when, and what outcome you're seeking.",
+    "manual.step3.documents": "Supporting documents (optional)",
+    "manual.step3.upload": "Upload documents",
+    "manual.step3.uploadHint": "PDF, DOCX, images up to 10 MB",
+    "manual.step4.title": "How would you like to pay?",
+    "manual.step4.desc": "All payments are protected by escrow.",
+    "manual.step4.escrow": "Escrow-protected payment",
+    "manual.step4.escrowDesc": "Held securely until you approve the work.",
+    "manual.step4.escrowNotice": "No payment required now — pay only after matching.",
+    "manual.step4.subscription": "Monthly subscription",
+    "manual.step4.subscriptionDesc": "Included consultations each month.",
+    "manual.step4.direct": "Direct billing",
+    "manual.step4.directDesc": "Pay the firm directly, outside the platform."
   },
   "directory": {
     "title": "Find a lawyer",
@@ -382,19 +310,16 @@
     "search": "Search by firm name, specialization, or emirate…",
     "showFilters": "Show filters",
     "hideFilters": "Hide filters",
-    "filter": {
-      "service": "Service",
-      "emirate": "Emirate",
-      "rating": "Rating",
-      "language": "Language",
-      "clear": "Clear"
-    },
+    "filter.service": "Service",
+    "filter.emirate": "Emirate",
+    "filter.rating": "Rating",
+    "filter.language": "Language",
+    "filter.clear": "Clear",
     "results": "firms found",
     "viewProfile": "View Profile",
     "requestMatch": "Request Match",
-    "empty": {
-      "hint": "Try adjusting your search or filter criteria."
-    }
+    "empty": "No firms match your filters",
+    "empty.hint": "Try adjusting your search or filter criteria."
   },
   "profile": {
     "verifiedBadge": "Verified",
