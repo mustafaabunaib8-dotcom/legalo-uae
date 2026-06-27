@@ -1,0 +1,14 @@
+node_modules
+.next
+.git
+.gitignore
+*.md
+*.log
+.env*.local
+Dockerfile
+pnpm-lock.yaml
+.DS_Store
+coverage
+.vscode
+.idea
+*.tsbuildinfo

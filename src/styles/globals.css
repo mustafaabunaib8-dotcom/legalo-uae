@@ -1,0 +1,407 @@
+@import 'tailwindcss';
+
+/* ============================================================================
+   Legalo Design System — Design Tokens
+   ============================================================================
+   A bilingual (AR/EN) UAE legal marketplace design language.
+
+   Theme model
+   -----------
+   * Light is the default and also the explicit `data-theme="light"` state.
+   * Dark is activated via `data-theme="dark"` on <html> (set by ThemeProvider).
+   * `[data-theme="system"]` is never persisted — ThemeProvider resolves system
+     preference to either light or dark before writing the attribute.
+
+   Naming convention
+   -----------------
+   Raw palette         → --emerald-*, --sand-*, --ink-*, --trust-*, --destructive, --gold
+   Surface semantics   → --surface-bg / --surface-card / --surface-elevated
+   Text semantics      → --text-primary / --text-secondary / --text-inverse
+   Border semantics    → --border-subtle / --border-strong
+   Shadow semantics    → --shadow-key / --shadow-ambient / --shadow-ring
+   Spacing / radius    → --radius-*
+   ============================================================================ */
+
+/* -------------------------------------------------------------------------- */
+/* Raw palette (never change; referenced by semantic tokens)                   */
+/* -------------------------------------------------------------------------- */
+:root {
+  /* Gulf Emerald — brand primary (UAE-tinted, cooler than generic emerald) */
+  --emerald-50:  #E8F5F3;
+  --emerald-100: #C5E8E2;
+  --emerald-200: #8ED1C4;
+  --emerald-300: #5AB8A6;
+  --emerald-400: #2A9E8A;
+  --emerald-500: #0D8A75;
+  --emerald-600: #0A7261;
+  --emerald-700: #065E4F;
+  --emerald-800: #044A3E;
+  --emerald-900: #02382F;
+
+  /* Desert Sand — warm neutrals, secondary accent, gold tier */
+  --sand-50:  #FDFBF7;
+  --sand-100: #FBF7F1;
+  --sand-200: #F0E4D0;
+  --sand-300: #E6D2B0;
+  --sand-400: #D4B98C;
+  --sand-500: #D4A373; /* accent / gold */
+  --sand-600: #BC8B5C;
+  --sand-700: #A67C52;
+
+  /* Warm Ink — near-black with emerald undertone, NEVER pure black */
+  --ink-50:  #F5F6F6;
+  --ink-100: #EAECEC;
+  --ink-200: #D5D9D8;
+  --ink-300: #9CA3A2;
+  --ink-400: #727C7A;
+  --ink-500: #5C6664;
+  --ink-600: #414D4B;
+  --ink-700: #2A3634;
+  --ink-800: #1A2523;
+  --ink-900: #0B1614;
+
+  /* Signal palette */
+  --trust-green:    #10B981;
+  --trust-blue:     #3B82F6;
+  --destructive:    #EF4444;
+  --gold:           #D4A373;
+
+  /* Surfaces (light default) */
+  --surface-bg:        #FCFAF8; /* cream — never #FAFAFA */
+  --surface-card:      #FFFFFF;
+  --surface-elevated:  #FFFFFF;
+  --surface-muted:     #F5F3EF;
+
+  /* Text (light default) */
+  --text-primary:    var(--ink-900);
+  --text-secondary:  var(--ink-500);
+  --text-tertiary:   var(--ink-300);
+  --text-inverse:    #FFFFFF;
+  --text-link:       var(--emerald-700);
+
+  /* Borders */
+  --border-subtle:   rgba(11, 22, 20, 0.08);
+  --border-strong:   rgba(11, 22, 20, 0.16);
+
+  /* Shadows — emerald-tinted triple-layer (Airbnb-style) */
+  --shadow-ring:    rgba(2, 56, 47, 0.02);
+  --shadow-ambient: rgba(2, 56, 47, 0.04);
+  --shadow-key:     rgba(2, 56, 47, 0.12);
+  --shadow-card:    rgba(2, 56, 47, 0.02) 0 0 0 1px,
+                    rgba(2, 56, 47, 0.04) 0 2px 6px,
+                    rgba(2, 56, 47, 0.12) 0 4px 8px;
+  --shadow-card-hover:
+                    rgba(2, 56, 47, 0.04) 0 0 0 1px,
+                    rgba(2, 56, 47, 0.08) 0 4px 12px,
+                    rgba(2, 56, 47, 0.18) 0 12px 24px;
+  --shadow-button:  0 1px 2px rgba(2, 56, 47, 0.06),
+                    0 2px 6px rgba(2, 56, 47, 0.08);
+  --shadow-nav:     0 1px 0 rgba(11, 22, 20, 0.06),
+                    0 8px 24px rgba(2, 56, 47, 0.06);
+
+  /* Radius scale */
+  --radius-sm:   0.375rem;  /* 6  */
+  --radius-md:   0.625rem;  /* 10 */
+  --radius-lg:   0.875rem;  /* 14 */
+  --radius-xl:   1.25rem;   /* 20 */
+  --radius-pill: 9999px;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast:   140ms;
+  --duration-base:   220ms;
+  --duration-slow:   380ms;
+
+  /* Typography */
+  --font-display: 'Inter Tight', system-ui, sans-serif;
+  --font-body:    'Inter Tight', system-ui, sans-serif;
+  --font-arabic:  'IBM Plex Sans Arabic', 'Inter Tight', system-ui, sans-serif;
+  --tracking-display: -0.0234em; /* -1.5px @ 64px */
+  --leading-arabic: 1.7;       /* +0.2 vs latin default */
+
+  color-scheme: light dark;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Dark theme — overrides only. Same token names, darker values.               */
+/* -------------------------------------------------------------------------- */
+[data-theme="dark"] {
+  --surface-bg:        #080F0E;
+  --surface-card:      #0F1A19;
+  --surface-elevated:  #162321;
+  --surface-muted:     #0B1614;
+
+  --text-primary:   #F0F5F4;
+  --text-secondary: #9CA3A2;
+  --text-tertiary:  #5C6664;
+  --text-inverse:   #080F0E;
+  --text-link:      var(--emerald-200);
+
+  --border-subtle: rgba(240, 245, 244, 0.08);
+  --border-strong: rgba(240, 245, 244, 0.16);
+
+  --shadow-ring:    rgba(0, 0, 0, 0.40);
+  --shadow-ambient: rgba(0, 0, 0, 0.30);
+  --shadow-key:     rgba(0, 0, 0, 0.55);
+  --shadow-card:    rgba(0, 0, 0, 0.40) 0 0 0 1px,
+                    rgba(0, 0, 0, 0.30) 0 2px 6px,
+                    rgba(0, 0, 0, 0.55) 0 4px 8px;
+  --shadow-card-hover:
+                    rgba(0, 0, 0, 0.50) 0 0 0 1px,
+                    rgba(13, 138, 117, 0.18) 0 4px 12px,
+                    rgba(0, 0, 0, 0.60) 0 12px 24px;
+  --shadow-button:  0 1px 2px rgba(0, 0, 0, 0.40),
+                    0 2px 6px rgba(0, 0, 0, 0.40);
+  --shadow-nav:     0 1px 0 rgba(240, 245, 244, 0.06),
+                    0 8px 24px rgba(0, 0, 0, 0.40);
+}
+
+/* Auto-resolved dark: when no data-theme attribute, honor system preference */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --surface-bg:        #080F0E;
+    --surface-card:      #0F1A19;
+    --surface-elevated:  #162321;
+    --surface-muted:     #0B1614;
+    --text-primary:   #F0F5F4;
+    --text-secondary: #9CA3A2;
+    --text-tertiary:  #5C6664;
+    --text-inverse:   #080F0E;
+    --text-link:      var(--emerald-200);
+    --border-subtle: rgba(240, 245, 244, 0.08);
+    --border-strong: rgba(240, 245, 244, 0.16);
+    --shadow-ring:    rgba(0, 0, 0, 0.40);
+    --shadow-ambient: rgba(0, 0, 0, 0.30);
+    --shadow-key:     rgba(0, 0, 0, 0.55);
+    --shadow-card:    rgba(0, 0, 0, 0.40) 0 0 0 1px,
+                      rgba(0, 0, 0, 0.30) 0 2px 6px,
+                      rgba(0, 0, 0, 0.55) 0 4px 8px;
+    --shadow-card-hover:
+                      rgba(0, 0, 0, 0.50) 0 0 0 1px,
+                      rgba(13, 138, 117, 0.18) 0 4px 12px,
+                      rgba(0, 0, 0, 0.60) 0 12px 24px;
+    --shadow-button:  0 1px 2px rgba(0, 0, 0, 0.40),
+                      0 2px 6px rgba(0, 0, 0, 0.40);
+    --shadow-nav:     0 1px 0 rgba(240, 245, 244, 0.06),
+                      0 8px 24px rgba(0, 0, 0, 0.40);
+  }
+}
+
+/* ============================================================================
+   Tailwind v4 — native theme tokens
+   These map the CSS custom properties above into Tailwind utility classes.
+   ============================================================================ */
+@theme {
+  /* Brand emerald */
+  --color-emerald-50:  #E8F5F3;
+  --color-emerald-100: #C5E8E2;
+  --color-emerald-200: #8ED1C4;
+  --color-emerald-300: #5AB8A6;
+  --color-emerald-400: #2A9E8A;
+  --color-emerald-500: #0D8A75;
+  --color-emerald-600: #0A7261;
+  --color-emerald-700: #065E4F;
+  --color-emerald-800: #044A3E;
+  --color-emerald-900: #02382F;
+
+  /* Desert sand */
+  --color-sand-50:  #FDFBF7;
+  --color-sand-100: #FBF7F1;
+  --color-sand-200: #F0E4D0;
+  --color-sand-300: #E6D2B0;
+  --color-sand-400: #D4B98C;
+  --color-sand-500: #D4A373;
+  --color-sand-600: #BC8B5C;
+  --color-sand-700: #A67C52;
+
+  /* Warm ink */
+  --color-ink-50:  #F5F6F6;
+  --color-ink-100: #EAECEC;
+  --color-ink-200: #D5D9D8;
+  --color-ink-300: #9CA3A2;
+  --color-ink-400: #727C7A;
+  --color-ink-500: #5C6664;
+  --color-ink-600: #414D4B;
+  --color-ink-700: #2A3634;
+  --color-ink-800: #1A2523;
+  --color-ink-900: #0B1614;
+
+  /* Signal */
+  --color-trust-green: #10B981;
+  --color-trust-blue:  #3B82F6;
+  --color-destructive: #EF4444;
+  --color-gold:        #D4A373;
+
+  /* Semantic surfaces (resolve at runtime from :root / [data-theme="dark"]) */
+  --color-surface-bg:       var(--surface-bg);
+  --color-surface-card:     var(--surface-card);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-muted:    var(--surface-muted);
+
+  /* Semantic text */
+  --color-text-primary:   var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary:  var(--text-tertiary);
+  --color-text-inverse:   var(--text-inverse);
+  --color-text-link:      var(--text-link);
+
+  /* Radius scale */
+  --radius-sm:   0.375rem;
+  --radius-md:   0.625rem;
+  --radius-lg:   0.875rem;
+  --radius-xl:   1.25rem;
+  --radius-pill: 9999px;
+
+  /* Font families — variables set by next/font/google in root layout */
+  --font-family-inter-tight:      var(--font-inter-tight);
+  --font-family-ibm-plex-arabic:  var(--font-ibm-plex-arabic);
+}
+
+/* ============================================================================
+   Base styles
+   ============================================================================ */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  html[data-theme="dark"],
+  html[data-theme="dark"] body {
+    background-color: var(--surface-bg);
+    color: var(--text-primary);
+  }
+
+  html:not([data-theme="dark"]) body {
+    background-color: var(--surface-bg);
+    color: var(--text-primary);
+  }
+
+  body {
+    font-family: var(--font-inter-tight), 'Inter Tight', system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  /* Arabic: swap font + add line-height lead */
+  html[lang="ar"] body,
+  html[lang="ar"] * {
+    font-family: var(--font-ibm-plex-arabic), 'IBM Plex Sans Arabic', system-ui, sans-serif;
+    line-height: var(--leading-arabic);
+  }
+
+  /* Display type — weight-300, tight tracking. Applied via .display-* utilities. */
+  .display {
+    font-weight: 300;
+    letter-spacing: var(--tracking-display);
+  }
+
+  /* Focus-visible — universal, emerald ring */
+  :focus-visible {
+    outline: 2px solid var(--emerald-500);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Reduced motion — kill transforms, fades still ok */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ============================================================================
+   Physical interactions — buttons and interactive surfaces
+   scale(1.05) on hover, scale(0.95) on active. Respects reduced motion.
+   ============================================================================ */
+@layer utilities {
+  .interactive {
+    transition: transform var(--duration-base) var(--ease-out-expo),
+                box-shadow var(--duration-base) var(--ease-out-expo),
+                background-color var(--duration-base) var(--ease-out-expo),
+                color var(--duration-base) var(--ease-out-expo);
+    will-change: transform;
+  }
+
+  .interactive:hover {
+    transform: scale(1.05);
+  }
+
+  .interactive:active {
+    transform: scale(0.95);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .interactive:hover,
+    .interactive:active {
+      transform: none;
+    }
+  }
+
+  /* Glass-morphic surface (navbar, modal backdrops) */
+  .glass {
+    background-color: rgba(252, 250, 248, 0.72);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    border-block-end: 1px solid var(--border-subtle);
+  }
+  [data-theme="dark"] .glass {
+    background-color: rgba(8, 15, 14, 0.72);
+  }
+
+  /* Card w/ 3-layer emerald-tinted shadow */
+  .card {
+    background-color: var(--surface-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+  }
+  .card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* Primary CTA button */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-inline: 1.25rem;
+    padding-block: 0.75rem;
+    background: linear-gradient(180deg, var(--emerald-500) 0%, var(--emerald-700) 100%);
+    color: #FFFFFF;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-button);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(180deg, var(--emerald-600) 0%, var(--emerald-800) 100%);
+  }
+
+  /* Ghost / secondary button */
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-inline: 1.25rem;
+    padding-block: 0.75rem;
+    background-color: transparent;
+    color: var(--text-primary);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-strong);
+  }
+  .btn-ghost:hover {
+    background-color: var(--surface-muted);
+  }
+
+  /* Logical-property helpers (in case utility classes are easier to read) */
+  .ps-safe { padding-inline-start: max(env(safe-area-inset-left), 1rem); }
+  .pe-safe { padding-inline-end: max(env(safe-area-inset-right), 1rem); }
+}
